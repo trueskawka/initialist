@@ -1,15 +1,38 @@
-$orange:#D78123;
-$blue:#1E1641;
-$green:#02d330;
-$grey: #999;
+$light: #F4EBE8;
+$normal: #FCA17D;
+$darker: #DA627D;
+$high: #9A348E;
+$text: #0D0628;
+
+body {
+  background-color: $light;
+  font-size: $text;
+  font-family: Helvetica;
+}
+
+.wraper {
+  width: 50%;
+  margin: 2em auto;
+}
+
+h1, h2 {
+  font-family: "Trebuchet MS";
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
 
 @mixin button($color) {
-  background:$color;
-  border: 2px solid darken($color,15%);
+  background: $color;
+  border: 2px solid darken($color, 15%);
   cursor: pointer;
-  color: #fff;
-  width: 150px;
-  margin-left:4px;
+  color: white;
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 10%;
 }
 
 .completed {
@@ -17,59 +40,86 @@ $grey: #999;
 }
 
 .tasks {
-  padding:0;
-  list-style:none;
+  padding: 0;
+  list-style: none;
 }
 
 .task {
-  position:relative;
-  padding:2px 0 2px 28px;
-  border-bottom: dotted 1px #ccc;
+  position: relative;
+  padding: 10px 0 2px 28px;
 }
 
 form.update {
-  position:absolute;
-  bottom:2px;
-  left:0;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
 }
 
 form.update input {
-  background:white;
-  color:white;
-  padding:0 2px;
-  border:solid 1px gray;
-  cursor:pointer;
+  background: white;
+  color: white;
+  border: solid 1px gray;
+  cursor: pointer;
 }
 
 .tasks li.completed form.update input {
-  color:#47FD6B;
+  color: $high;
 }
 
 form.delete {
-  display:inline;
+  display: inline-block;
 }
 
 form.delete input {
-  background:none;
-  cursor:pointer;
-  border:none;
+  background: none;
+  cursor: pointer;
+  border: none;
 }
 
 .lists {
-  padding:0;
-  list-style:none;
-  overflow:hidden;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
 }
 
 .list {
   float: left;
-  background: #fff;
+  margin: 0 2em 0 0;
 
-  h1 {
-    color:$orange;
+  h2 {
+    color: $darker;
+    margin: 0.5em auto;
+    text-align: center;
   }
 }
 
 .button {
-  @include button($orange);
+  @include button($darker);
+}
+
+.btn {
+  margin: 1em 0;
+}
+
+.dlt {
+  position: absolute;
+  right: 0px;
+  bottom: 2px;
+}
+
+.ipt {
+  height: 2em;
+}
+
+#add {
+  margin: 0 auto;
+  width: 210px;
+}
+
+.task-txt {
+  width: 100%;
+}
+
+.task-name {
+  margin: 0 50px 0 0;
 }
