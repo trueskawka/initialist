@@ -3,6 +3,7 @@ class Task
   property :id,           Serial
   property :name,         String, :required => true
   property :completed_at, DateTime
+  belongs_to :list
 end
 
 class List
@@ -23,27 +24,27 @@ end
 
 post '/:id' do
   List.get(params[:id]).tasks.create params['task']
-  redirect to('/')
+  redirect '/'
 end
 
 delete '/task/:id' do
   Task.get(params[:id]).destroy
-  redirect to('/')
+  redirect '/'
 end
 
 put '/task/:id' do
   task = Task.get params[:id]
   task.completed_at = task.completed_at.nil? ? Time.now : nil
   task.save
-  redirect to('/')
+  redirect '/'
 end
 
 post '/new/list' do
   List.create params['list']
-  redirect to('/')
+  redirect '/'
 end
 
 delete '/list/:id' do
   List.get(params[:id]).destroy
-  redirect to('/')
+  redirect '/'
 end

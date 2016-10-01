@@ -70,19 +70,6 @@ form.delete input {
   }
 }
 
-h1.logo {
-  font-family: helvetica,arial,sans-serif;
-  font-size: 24px;
-  color: white;
-  padding: 64px 0 0;
-  margin: 0 auto;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: normal;
-  letter-spacing: 0.3em;
-  background: transparent url(/logo.png) 50% 0 no-repeat;
-}
-
 .button {
   @include button($orange);
 }
