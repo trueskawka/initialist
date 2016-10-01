@@ -58,7 +58,6 @@ GEM
     json (1.8.3)
     json_pure (1.8.3)
     multi_json (1.12.1)
-    pg (0.18.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -92,7 +91,6 @@ PLATFORMS
 DEPENDENCIES
   datamapper
   dm-postgres-adapter
-  pg
   sass
   sinatra
   sinatra-reloader

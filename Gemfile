@@ -4,10 +4,7 @@ gem "sinatra-reloader"
 gem "datamapper", require: "data_mapper"
 gem "slim"
 gem "sass"
-group :production do
-    gem "pg"
-    gem "dm-postgres-adapter"
-end
+gem "dm-postgres-adapter"
 
 # group :development, :test do
 #     gem "sqlite3"
