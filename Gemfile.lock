@@ -81,6 +81,8 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sinatra-reloader (1.0)
       sinatra-contrib
     slim (3.0.7)
@@ -95,14 +97,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   datamapper
   dm-postgres-adapter
   dm-sqlite-adapter
   pg
   sass
   sinatra
+  sinatra-flash (= 0.3.0)
   sinatra-reloader
   slim
 
 BUNDLED WITH
-   1.12.5
+   1.13.2

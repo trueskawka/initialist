@@ -6,16 +6,25 @@ $text: #0D0628;
 
 body {
   background-color: $light;
-  font-size: $text;
+  color: $text;
   font-family: Helvetica;
+  font-size: 16px;
 }
 
-.wraper {
+.wrapper {
   width: 50%;
   margin: 2em auto;
+
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 960px) {
+    width: 80%;
+  }
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: "Trebuchet MS";
   font-weight: 500;
 }
@@ -23,6 +32,11 @@ h1, h2 {
 h1 {
   text-align: center;
   font-size: 2.5em;
+}
+
+a {
+  text-decoration: none;
+  color: $high;
 }
 
 @mixin button($color) {
@@ -42,6 +56,7 @@ h1 {
 .tasks {
   padding: 0;
   list-style: none;
+  width: 100%;
 }
 
 .task {
@@ -49,31 +64,8 @@ h1 {
   padding: 10px 0 2px 28px;
 }
 
-form.update {
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-}
-
-form.update input {
-  background: white;
-  color: white;
-  border: solid 1px gray;
-  cursor: pointer;
-}
-
 .tasks li.completed form.update input {
   color: $high;
-}
-
-form.delete {
-  display: inline-block;
-}
-
-form.delete input {
-  background: none;
-  cursor: pointer;
-  border: none;
 }
 
 .lists {
@@ -93,12 +85,36 @@ form.delete input {
   }
 }
 
+form.update {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+
+  input {
+    background: white;
+    color: white;
+    border: solid 1px gray;
+    cursor: pointer;
+  }
+}
+
+form.delete {
+  display: inline-block;
+
+  input {
+    background: none;
+    cursor: pointer;
+    border: none;
+  }
+}
+
 .button {
   @include button($darker);
 }
 
 .btn {
   margin: 1em 0;
+  display: block;
 }
 
 .dlt {
@@ -117,9 +133,39 @@ form.delete input {
 }
 
 .task-txt {
-  width: 100%;
+  min-width: 180px;
+  width: calc(100% - 87px);
+
+  @media only screen and (max-width: 600px) {
+    min-width: initial;
+  }
 }
 
 .task-name {
   margin: 0 50px 0 0;
+}
+
+.txt-ipt {
+  display: block;
+  margin: 1em 0;
+}
+
+.lbl-ipt {
+  min-width: 80px;
+  display: inline-block;
+  font-size: 1.1em;
+  margin: 0 1em 0 0;
+}
+
+.username {
+  font-weight: 800;
+}
+
+.content {
+  min-height: 400px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 3em;
 }

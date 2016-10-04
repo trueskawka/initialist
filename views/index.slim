@@ -1,7 +1,17 @@
-div id="add"
-  form.new-list action="/new/list" method="POST"
-    input type="text" name="list[name]" class="ipt"
-    input.button type="submit" value="add list"
-ul.lists
-  - @lists.each do |list|
-    == slim :list, locals: { list: list }
+div class="content"
+  - if @user
+    div id="add"
+      form action="/new/list" method="POST"
+        input type="text" name="name" class="ipt"
+        input.button type="submit" value="add list"
+    ul.lists
+      - @lists.each do |list|
+        == slim :list, locals: { list: list }    
+  - else
+    h3 Welcome to Initialist, a place to store all your lists!
+    h3 <a href="/auth/login">Log in</a> or <a href="/user/create">create an account</a>
+
+footer
+  - if @user
+    span class="username" #{@user.email} 
+    a href="/auth/logout" (log out)

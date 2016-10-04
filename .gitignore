@@ -1,2 +1,5 @@
 development.db
 .bundle
+.rubygemset
+.ruby-version
+.sass-cache/*
